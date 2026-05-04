@@ -22,8 +22,8 @@ export default function App() {
     return (
       <div className="grid min-h-screen place-items-center bg-gradient-to-b from-violet-400 via-pink-200 to-sky-100 p-8 text-center">
         <div>
-          <img src={`${import.meta.env.BASE_URL}assets/icon/icon-1024.png`} alt="codaaí" className="mx-auto h-36 w-36 rounded-[2rem] shadow-soft" />
-          <h1 className="mt-6 text-5xl font-black text-white drop-shadow-sm">codaaí</h1>
+          <img src={`${import.meta.env.BASE_URL}assets/icon/icon-1024.png`} alt="coda-aí" className="mx-auto h-36 w-36 rounded-[2rem] shadow-soft" />
+          <h1 className="mt-6 text-5xl font-black text-white drop-shadow-sm">coda-aí</h1>
           <p className="mt-3 font-bold text-white/90">Aprenda. Pratique. Evolua.</p>
         </div>
       </div>

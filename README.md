@@ -1,4 +1,4 @@
-# codaaí
+# coda-aí
 
 App PWA/mobile-first para ensinar programação de forma gamificada, inspirado em experiências como Duolingo e Mimo.
 
@@ -15,6 +15,7 @@ App PWA/mobile-first para ensinar programação de forma gamificada, inspirado e
 - Progresso salvo em `localStorage`, com migração simples para dados antigos.
 - Perfil com avatar/mascote, nome editável, nível, XP, sequência, trilha atual, conquistas e reset com confirmação.
 - Base para atualizações mensais de conteúdo.
+- PWA instalável com manifest, ícone, tema mobile, splash e service worker básico.
 
 ## Tecnologias
 
@@ -37,18 +38,18 @@ Depois, abra a URL exibida pelo Vite no navegador.
 
 ## Como instalar como PWA
 
-O codaaí possui `manifest.json`, ícone, tema mobile, splash e service worker básico. Em produção, ele pode ser instalado como um app pela opção "Adicionar à tela inicial".
+O coda-aí pode ser instalado no celular pela opção "Adicionar à tela inicial".
 
 Android/Chrome:
 
-1. Abra o codaaí no Chrome.
+1. Abra o coda-aí no Chrome.
 2. Toque nos três pontos.
 3. Toque em “Adicionar à tela inicial”.
 4. Confirme.
 
 iPhone/Safari:
 
-1. Abra o codaaí no Safari.
+1. Abra o coda-aí no Safari.
 2. Toque no botão de compartilhar.
 3. Toque em “Adicionar à Tela de Início”.
 4. Confirme.
@@ -64,7 +65,7 @@ npm run deploy
 
 ## Publicar no GitHub Pages
 
-O projeto já está preparado para GitHub Pages usando Vite com `base: '/coda-ai-1.1/'` em `vite.config.js` e deploy da pasta `dist` com `gh-pages`.
+O projeto está preparado para GitHub Pages usando Vite com `base: '/coda-ai-1.1/'` em `vite.config.js` e deploy da pasta `dist` com `gh-pages`.
 
 Passo a passo:
 
@@ -79,7 +80,7 @@ git remote add origin https://github.com/SEU_USUARIO/coda-ai-1.1.git
 
 ```bash
 git add .
-git commit -m "prepare codaaí for github pages"
+git commit -m "prepare coda-aí for github pages"
 git branch -M main
 git push -u origin main
 ```
@@ -92,11 +93,19 @@ npm run deploy
 
 5. No GitHub, abra `Settings > Pages` e selecione a branch `gh-pages` como origem do Pages.
 
-Depois da publicação, a URL seguirá este formato:
+URL padrão do GitHub Pages:
 
 ```text
 https://SEU_USUARIO.github.io/coda-ai-1.1/
 ```
+
+Neste repositório:
+
+```text
+https://Aarleyzin.github.io/coda-ai-1.1/
+```
+
+Se o GitHub exibir `orsini-systems.me/coda-ai-1.1/`, isso vem de uma configuração de domínio personalizado do GitHub Pages da conta/usuário. O projeto não define esse domínio: não há `CNAME` no repositório.
 
 Se o repositório tiver outro nome, ajuste o `base` em `vite.config.js` para `'/nome-do-repositorio/'` antes de rodar `npm run build` ou `npm run deploy`.
 
@@ -176,7 +185,7 @@ As novidades ficam em `src/data/monthlyContent.js`. Cada atualização deve ter:
 
 ## Persistência
 
-O estado do usuário é salvo com Zustand em `localStorage`, usando a chave `codaai-progress-v2`. O app preserva nome, XP, nível, sequência, desafios concluídos, progresso por trilha, conquistas, tentativas e data do último acesso.
+O estado do usuário é salvo com Zustand em `localStorage`, usando a chave legada `codaai-progress-v2` para preservar progresso de versões anteriores. O app preserva nome, XP, nível, sequência, desafios concluídos, progresso por trilha, conquistas, tentativas e data do último acesso.
 
 O reset de progresso só acontece por ação explícita do usuário e exige confirmação.
 

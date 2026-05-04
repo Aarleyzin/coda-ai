@@ -204,10 +204,10 @@ export const learningTracks = [
         id: 'apis-002',
         title: 'JSON',
         reward: 10,
-        question: 'Complete um objeto JSON com a chave nome e o valor "codaaí".',
+        question: 'Complete um objeto JSON com a chave nome e o valor "coda-aí".',
         examples: ['{ "ativo": true }'],
         starterCode: '{\n  \n}',
-        answer: '"nome": "codaaí"',
+        answer: '"nome": "coda-aí"',
         hint: 'JSON usa chave e valor entre aspas.',
         explanation: 'JSON e um formato comum para trocar dados entre apps e APIs.'
       }

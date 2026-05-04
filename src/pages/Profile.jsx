@@ -19,7 +19,7 @@ export default function Profile({ setScreen }) {
   const unlockedAchievements = achievementCatalog.filter((achievement) => achievements.includes(achievement.id))
 
   function editName() {
-    const nextName = window.prompt('Como voce quer aparecer no codaaí?', userName)
+    const nextName = window.prompt('Como voce quer aparecer no coda-aí?', userName)
     if (nextName !== null) setUserName(nextName)
   }
 
@@ -58,7 +58,7 @@ export default function Profile({ setScreen }) {
             <Smartphone size={24} />
           </div>
           <div className="min-w-0">
-            <h2 className="text-xl font-black">Adicionar codaaí à tela inicial</h2>
+            <h2 className="text-xl font-black">Adicionar coda-aí à tela inicial</h2>
             <p className="mt-2 text-sm font-semibold leading-6 text-white/85">
               Instale como PWA para abrir em tela cheia, com icone proprio e experiencia parecida com app nativo.
             </p>
@@ -88,9 +88,9 @@ export default function Profile({ setScreen }) {
       </section>
 
       <section className="mt-5 rounded-[1.75rem] bg-white p-5 shadow-soft">
-        <h2 className="text-xl font-black">Sobre o codaaí</h2>
+        <h2 className="text-xl font-black">Sobre o coda-aí</h2>
         <p className="mt-3 text-sm leading-6 text-slate-600">
-          O codaaí e um app mobile-first para aprender programacao com desafios curtos, trilhas guiadas e progresso salvo no navegador.
+          O coda-aí e um app mobile-first para aprender programacao com desafios curtos, trilhas guiadas e progresso salvo no navegador.
         </p>
       </section>
 

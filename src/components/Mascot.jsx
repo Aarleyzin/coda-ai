@@ -12,7 +12,7 @@ export default function Mascot({ mood = 'idle', className = 'w-32' }) {
     <motion.img
       key={mood}
       src={mascotMap[mood]}
-      alt="Mascote codaaí"
+      alt="Mascote coda-aí"
       className={`${className} block bg-transparent object-contain`}
       initial={{ opacity: 0, scale: 0.94, y: 8 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
