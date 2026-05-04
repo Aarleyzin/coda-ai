@@ -93,7 +93,13 @@ npm run deploy
 
 5. No GitHub, abra `Settings > Pages` e selecione a branch `gh-pages` como origem do Pages.
 
-URL padrão do GitHub Pages:
+URL publicada atualmente:
+
+```text
+http://orsini-systems.me/coda-ai-1.1/
+```
+
+URL padrão alternativa do GitHub Pages:
 
 ```text
 https://SEU_USUARIO.github.io/coda-ai-1.1/
@@ -105,7 +111,7 @@ Neste repositório:
 https://Aarleyzin.github.io/coda-ai-1.1/
 ```
 
-Se o GitHub exibir `orsini-systems.me/coda-ai-1.1/`, isso vem de uma configuração de domínio personalizado do GitHub Pages da conta/usuário. O projeto não define esse domínio: não há `CNAME` no repositório.
+O domínio `orsini-systems.me` vem da configuração de domínio personalizado do GitHub Pages da conta/usuário. O projeto não precisa de um arquivo `CNAME` próprio para continuar funcionando nele.
 
 Se o repositório tiver outro nome, ajuste o `base` em `vite.config.js` para `'/nome-do-repositorio/'` antes de rodar `npm run build` ou `npm run deploy`.
 
