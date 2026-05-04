@@ -65,15 +65,15 @@ npm run deploy
 
 ## Publicar no GitHub Pages
 
-O projeto está preparado para GitHub Pages usando Vite com `base: '/coda-ai-1.1/'` em `vite.config.js` e deploy da pasta `dist` com `gh-pages`.
+O projeto está preparado para GitHub Pages usando Vite com `base: '/coda-ai/'` em `vite.config.js` e deploy da pasta `dist` com `gh-pages`.
 
 Passo a passo:
 
-1. Crie um repositório no GitHub chamado `coda-ai-1.1`.
+1. Crie um repositório no GitHub chamado `coda-ai`.
 2. Configure o remoto local:
 
 ```bash
-git remote add origin https://github.com/SEU_USUARIO/coda-ai-1.1.git
+git remote add origin https://github.com/SEU_USUARIO/coda-ai.git
 ```
 
 3. Envie o código para a branch principal:
@@ -96,19 +96,19 @@ npm run deploy
 URL publicada atualmente:
 
 ```text
-http://orsini-systems.me/coda-ai-1.1/
+http://orsini-systems.me/coda-ai/
 ```
 
 URL padrão alternativa do GitHub Pages:
 
 ```text
-https://SEU_USUARIO.github.io/coda-ai-1.1/
+https://SEU_USUARIO.github.io/coda-ai/
 ```
 
 Neste repositório:
 
 ```text
-https://Aarleyzin.github.io/coda-ai-1.1/
+https://Aarleyzin.github.io/coda-ai/
 ```
 
 O domínio `orsini-systems.me` vem da configuração de domínio personalizado do GitHub Pages da conta/usuário. O projeto não precisa de um arquivo `CNAME` próprio para continuar funcionando nele.
