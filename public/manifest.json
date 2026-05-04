@@ -1,0 +1,36 @@
+{
+  "name": "codaaí - Aprenda programação jogando",
+  "short_name": "codaaí",
+  "description": "App mobile-first para aprender programação com desafios curtos, trilhas guiadas e progresso salvo.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#f5f3ff",
+  "theme_color": "#a78bfa",
+  "categories": ["education", "productivity"],
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "assets/icon/icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screens/home.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/screens/challenge.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
