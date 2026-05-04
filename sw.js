@@ -1,4 +1,4 @@
-const CACHE_NAME = 'codaai-pwa-v2'
+const CACHE_NAME = 'coda-ai-pwa-v3'
 const BASE_URL = new URL(self.registration.scope).pathname
 const withBase = (path) => `${BASE_URL}${path}`.replace(/\/{2,}/g, '/')
 
