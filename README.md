@@ -95,16 +95,10 @@ npm run deploy
 URL publicada atualmente:
 
 ```text
-http://orsini-systems.me/coda-ai/
-```
-
-URL padrão alternativa do GitHub Pages:
-
-```text
 https://Aarleyzin.github.io/coda-ai/
 ```
 
-O domínio `orsini-systems.me` vem da configuração de domínio personalizado do GitHub Pages da conta/usuário. O projeto não precisa de um arquivo `CNAME` próprio para continuar funcionando nele.
+Se quiser usar `orsini-systems.me/coda-ai/`, o domínio precisa estar configurado no GitHub Pages da conta/usuário que serve os project pages. Não adicione `CNAME` neste repositório sem ajustar o `base`, porque um CNAME direto publicaria este projeto na raiz do domínio.
 
 Se o repositório tiver outro nome, ajuste o `base` em `vite.config.js` para `'/nome-do-repositorio/'` antes de rodar `npm run build` ou `npm run deploy`.
 
