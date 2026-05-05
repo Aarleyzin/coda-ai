@@ -67,7 +67,7 @@ export default function Challenge({ setScreen }) {
       <section className="mt-6 rounded-[1.75rem] bg-white p-5 shadow-soft">
         <div className="mb-5 flex items-center justify-between gap-3">
           <span className="inline-flex items-center gap-2 rounded-2xl bg-amber-50 px-3 py-2 text-sm font-black text-amber-600">
-            <Star size={17} fill="currentColor" /> {alreadyCompleted ? 'Revisao' : 'Novo'}
+            <Star size={17} fill="currentColor" /> {alreadyCompleted ? 'Revisão' : 'Novo'}
           </span>
           <span className="rounded-2xl bg-violet-50 px-3 py-2 text-sm font-black text-violet-600">+{alreadyCompleted ? 0 : current.reward} XP</span>
         </div>
@@ -96,7 +96,7 @@ export default function Challenge({ setScreen }) {
 
       <section className="mt-5 rounded-[1.75rem] bg-white p-5 shadow-soft">
         <div className="mb-3 flex items-center justify-between gap-3">
-          <h2 className="text-lg font-black text-violet-600">&lt;/&gt; Seu codigo</h2>
+          <h2 className="text-lg font-black text-violet-600">&lt;/&gt; Seu código</h2>
           <button
             type="button"
             onClick={() => setShowHint(true)}
@@ -136,7 +136,7 @@ export default function Challenge({ setScreen }) {
         </div>
         {feedback === 'error' && (
           <p className="mt-4 rounded-2xl bg-rose-50 p-4 text-sm font-bold leading-6 text-rose-500">
-            Ainda nao foi dessa. Compare sua resposta com a dica e tente de novo.
+            Ainda não foi dessa. Compare sua resposta com a dica e tente de novo.
           </p>
         )}
       </section>
@@ -151,7 +151,7 @@ function SuccessScreen({ setScreen, earned, challenge, alreadyCompleted }) {
       <Mascot mood="happy" className="mx-auto w-56 drop-shadow-xl" />
       <h1 className="mt-2 text-4xl font-black">Muito bem!</h1>
       <p className="mt-3 text-base leading-7 text-slate-500">
-        {alreadyCompleted ? 'Voce revisou um desafio ja concluido.' : 'Voce concluiu o desafio com sucesso.'}
+        {alreadyCompleted ? 'Você revisou um desafio já concluído.' : 'Você concluiu o desafio com sucesso.'}
       </p>
       <section className="mt-6 rounded-[1.75rem] bg-white p-6 shadow-soft">
         <p className="text-lg font-black text-violet-500">XP ganho</p>
@@ -159,11 +159,11 @@ function SuccessScreen({ setScreen, earned, challenge, alreadyCompleted }) {
         <p className="mt-3 text-sm leading-6 text-slate-500">{challenge.explanation}</p>
       </section>
       <section className="mt-5 rounded-[1.75rem] bg-gradient-to-r from-violet-600 to-fuchsia-500 p-5 text-white shadow-soft">
-        <p className="text-lg font-black">Nivel {level}</p>
+        <p className="text-lg font-black">Nível {level}</p>
         <p className="mt-1 text-2xl font-black">{xp} XP total</p>
       </section>
       <button type="button" onClick={() => setScreen('challenge')} className="mt-5 w-full rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-500 py-4 text-lg font-black text-white shadow-soft">
-        Proximo desafio
+        Próximo desafio
       </button>
       <button type="button" onClick={() => setScreen('challenges')} className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white py-4 text-lg font-black text-violet-600 shadow-soft">
         <Eraser size={19} />

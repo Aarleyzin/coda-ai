@@ -78,8 +78,8 @@ function normalizePersistedState(persistedState) {
 export const achievementCatalog = [
   { id: 'first-challenge', title: 'Primeiro passo', description: 'Concluiu seu primeiro desafio.' },
   { id: 'five-challenges', title: 'Pegando ritmo', description: 'Concluiu 5 desafios.' },
-  { id: 'three-day-streak', title: 'Sequencia acesa', description: 'Manteve 3 dias de pratica.' },
-  { id: 'level-two', title: 'Subiu de nivel', description: 'Chegou ao nivel 2.' }
+  { id: 'three-day-streak', title: 'Sequência acesa', description: 'Manteve 3 dias de prática.' },
+  { id: 'level-two', title: 'Subiu de nível', description: 'Chegou ao nível 2.' }
 ]
 
 export const useGameStore = create(

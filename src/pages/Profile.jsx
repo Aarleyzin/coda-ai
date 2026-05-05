@@ -19,12 +19,12 @@ export default function Profile({ setScreen }) {
   const unlockedAchievements = achievementCatalog.filter((achievement) => achievements.includes(achievement.id))
 
   function editName() {
-    const nextName = window.prompt('Como voce quer aparecer no coda-aí?', userName)
+    const nextName = window.prompt('Como você quer aparecer no coda-aí?', userName)
     if (nextName !== null) setUserName(nextName)
   }
 
   function confirmReset() {
-    const ok = window.confirm('Resetar seu progresso? Seu nome sera mantido, mas XP, desafios e conquistas serao reiniciados.')
+    const ok = window.confirm('Resetar seu progresso? Seu nome será mantido, mas XP, desafios e conquistas serão reiniciados.')
     if (ok) resetProgress()
   }
 
@@ -33,7 +33,7 @@ export default function Profile({ setScreen }) {
       <header className="rounded-[1.75rem] bg-white p-5 text-center shadow-soft">
         <Mascot mood="happy" className="mx-auto w-36 drop-shadow-xl" />
         <h1 className="mt-2 text-3xl font-black">{userName}</h1>
-        <p className="mt-1 text-sm font-bold text-violet-500">Nivel {level} • {xp} XP</p>
+        <p className="mt-1 text-sm font-bold text-violet-500">Nível {level} • {xp} XP</p>
         <div className="mt-5 grid grid-cols-3 gap-3">
           <MiniStat icon={<Zap size={18} />} value={xp} label="XP" />
           <MiniStat icon={<Flame size={18} />} value={streak} label="Dias" />
@@ -60,12 +60,12 @@ export default function Profile({ setScreen }) {
           <div className="min-w-0">
             <h2 className="text-xl font-black">Adicionar coda-aí à tela inicial</h2>
             <p className="mt-2 text-sm font-semibold leading-6 text-white/85">
-              Instale como PWA para abrir em tela cheia, com icone proprio e experiencia parecida com app nativo.
+              Instale como PWA para abrir em tela cheia, com ícone próprio e experiência parecida com app nativo.
             </p>
           </div>
         </div>
         <div className="mt-4 rounded-2xl bg-white/15 p-4 text-sm font-semibold leading-6 text-white/90">
-          No Chrome, use o menu de tres pontos. No Safari do iPhone, use compartilhar e depois Adicionar à Tela de Inicio.
+          No Chrome, use o menu de três pontos. No Safari do iPhone, use compartilhar e depois Adicionar à Tela de Início.
         </div>
       </section>
 
@@ -90,14 +90,14 @@ export default function Profile({ setScreen }) {
       <section className="mt-5 rounded-[1.75rem] bg-white p-5 shadow-soft">
         <h2 className="text-xl font-black">Sobre o coda-aí</h2>
         <p className="mt-3 text-sm leading-6 text-slate-600">
-          O coda-aí e um app mobile-first para aprender programacao com desafios curtos, trilhas guiadas e progresso salvo no navegador.
+          O coda-aí é um app mobile-first para aprender programação com desafios curtos, trilhas guiadas e progresso salvo no navegador.
         </p>
       </section>
 
       <section className="mt-5 rounded-[1.75rem] bg-white p-5 shadow-soft">
         <div className="flex items-center gap-2 text-violet-600">
           <CalendarDays size={20} />
-          <h2 className="text-xl font-black">Atualizacoes mensais de conteudo</h2>
+          <h2 className="text-xl font-black">Atualizações mensais de conteúdo</h2>
         </div>
         <div className="mt-4 space-y-3">
           {monthlyContent.map((item) => (

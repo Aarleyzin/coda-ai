@@ -1,4 +1,5 @@
 import { CheckCircle2, ChevronRight, Circle, Play } from 'lucide-react'
+import TrackIcon from '../components/TrackIcon'
 import { getChallengesByTrack, tracks } from '../data/challenges'
 import { useGameStore } from '../store/useGameStore'
 
@@ -24,7 +25,7 @@ export default function Challenges({ setScreen }) {
       <header>
         <p className="font-black text-violet-500">Escolha sua rota</p>
         <h1 className="mt-2 text-4xl font-black tracking-tight">Desafios</h1>
-        <p className="mt-3 text-sm leading-6 text-slate-500">Selecione uma trilha e pratique em pequenas missoes.</p>
+        <p className="mt-3 text-sm leading-6 text-slate-500">Selecione uma trilha e pratique em pequenas missões.</p>
       </header>
 
       <section className="mt-6 flex gap-3 overflow-x-auto pb-2">
@@ -40,8 +41,8 @@ export default function Challenges({ setScreen }) {
                 active ? 'ring-violet-300' : 'ring-transparent'
               }`}
             >
-              <div className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${track.color} text-sm font-black text-slate-800`}>
-                {track.icon}
+              <div className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${track.color} text-slate-800`}>
+                <TrackIcon track={track} />
               </div>
               <h2 className="mt-3 font-black">{track.title}</h2>
               <p className="mt-1 text-xs font-bold text-slate-500">{track.difficulty}</p>

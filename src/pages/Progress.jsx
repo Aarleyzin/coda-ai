@@ -16,7 +16,7 @@ export default function Progress() {
         <div>
           <p className="font-black text-violet-500">Seu painel</p>
           <h1 className="mt-2 text-4xl font-black tracking-tight">Progresso</h1>
-          <p className="mt-3 text-sm leading-6 text-slate-500">Acompanhe o que voce ja praticou.</p>
+          <p className="mt-3 text-sm leading-6 text-slate-500">Acompanhe o que você já praticou.</p>
         </div>
         <Mascot mood="idle" className="w-28 drop-shadow-xl" />
       </header>
@@ -25,18 +25,18 @@ export default function Progress() {
         <div className="flex items-center gap-4">
           <div className="grid h-20 w-20 shrink-0 place-items-center rounded-[1.35rem] bg-white/20 text-4xl font-black">{level}</div>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-bold text-white/85">Nivel atual</p>
+            <p className="text-sm font-bold text-white/85">Nível atual</p>
             <h2 className="mt-1 text-3xl font-black">{xp} XP</h2>
             <ProgressBar value={xpToNextLevel} className="mt-3" />
-            <p className="mt-2 text-xs font-semibold text-white/85">Faltam {100 - xpToNextLevel} XP para o nivel {level + 1}</p>
+            <p className="mt-2 text-xs font-semibold text-white/85">Faltam {100 - xpToNextLevel} XP para o nível {level + 1}</p>
           </div>
         </div>
       </section>
 
       <section className="mt-5 grid grid-cols-2 gap-3">
         <Stat icon={<Zap className="text-violet-500" />} value={xp} label="XP total" />
-        <Stat icon={<Trophy className="text-amber-500" />} value={completedChallenges.length} label="Desafios concluidos" />
-        <Stat icon={<Flame className="text-pink-500" />} value={streak} label="Sequencia atual" />
+        <Stat icon={<Trophy className="text-amber-500" />} value={completedChallenges.length} label="Desafios concluídos" />
+        <Stat icon={<Flame className="text-pink-500" />} value={streak} label="Sequência atual" />
         <Stat icon={<Target className="text-emerald-500" />} value={`${successRate}%`} label="Taxa de acertos" />
       </section>
 

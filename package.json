@@ -1,7 +1,7 @@
 {
   "name": "coda-ai",
   "version": "1.0.0",
-  "description": "PWA mobile-first gamificado para aprender programacao.",
+  "description": "PWA mobile-first gamificado para aprender programação.",
   "private": true,
   "type": "module",
   "scripts": {

@@ -14,7 +14,6 @@ App PWA/mobile-first para ensinar programação de forma gamificada, inspirado e
 - XP concedido apenas uma vez por desafio concluído.
 - Progresso salvo em `localStorage`, com migração simples para dados antigos.
 - Perfil com avatar/mascote, nome editável, nível, XP, sequência, trilha atual, conquistas e reset com confirmação.
-- Base para atualizações mensais de conteúdo.
 - PWA instalável com manifest, ícone, tema mobile, splash e service worker básico.
 
 ## Tecnologias
@@ -69,7 +68,7 @@ O projeto está preparado para GitHub Pages usando Vite com `base: '/coda-ai/'` 
 
 Passo a passo:
 
-1. Crie um repositório no GitHub chamado `coda-ai`.
+1. Crie ou use um repositório no GitHub chamado `coda-ai`.
 2. Configure o remoto local:
 
 ```bash
@@ -100,12 +99,6 @@ http://orsini-systems.me/coda-ai/
 ```
 
 URL padrão alternativa do GitHub Pages:
-
-```text
-https://SEU_USUARIO.github.io/coda-ai/
-```
-
-Neste repositório:
 
 ```text
 https://Aarleyzin.github.io/coda-ai/
@@ -149,9 +142,8 @@ Edite `src/data/challenges.js` e adicione um novo objeto em `learningTracks`:
 {
   id: 'nova-trilha',
   title: 'Nova Trilha',
-  description: 'Descricao curta da trilha.',
+  description: 'Descrição curta da trilha.',
   difficulty: 'Iniciante',
-  icon: 'NT',
   color: 'from-sky-200 to-cyan-200',
   lessons: []
 }
