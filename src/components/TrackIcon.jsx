@@ -1,17 +1,23 @@
-import { Braces, Brain, Cloud, Code2, Database, FileCode2, GitBranch } from 'lucide-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAws, faGitAlt, faJs, faPython } from '@fortawesome/free-brands-svg-icons'
+import { faBrain, faCode, faDatabase } from '@fortawesome/free-solid-svg-icons'
 
 const iconMap = {
-  logic: Brain,
-  javascript: Braces,
-  python: FileCode2,
-  sql: Database,
-  git: GitBranch,
-  apis: Code2,
-  aws: Cloud
+  logic: faBrain,
+  javascript: faJs,
+  python: faPython,
+  sql: faDatabase,
+  git: faGitAlt,
+  apis: faCode,
+  aws: faAws
 }
 
-export default function TrackIcon({ track, size = 24 }) {
-  const Icon = iconMap[track.id] ?? Code2
-
-  return <Icon size={size} strokeWidth={2.4} aria-hidden="true" />
+export default function TrackIcon({ track, size = 'lg' }) {
+  return (
+    <FontAwesomeIcon
+      icon={iconMap[track.id] ?? faCode}
+      size={size}
+      aria-hidden="true"
+    />
+  )
 }

@@ -156,7 +156,7 @@ function SuccessScreen({ setScreen, earned, challenge, alreadyCompleted }) {
       <section className="mt-6 rounded-[1.75rem] bg-white p-6 shadow-soft">
         <p className="text-lg font-black text-violet-500">XP ganho</p>
         <h2 className="mt-2 text-6xl font-black text-violet-600">+{earned}</h2>
-        <p className="mt-3 text-sm leading-6 text-slate-500">{challenge.explanation}</p>
+        <p className="mt-3 text-sm leading-6 text-slate-500">{challenge.successMessage ?? challenge.explanation}</p>
       </section>
       <section className="mt-5 rounded-[1.75rem] bg-gradient-to-r from-violet-600 to-fuchsia-500 p-5 text-white shadow-soft">
         <p className="text-lg font-black">Nível {level}</p>

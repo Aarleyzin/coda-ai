@@ -25,6 +25,7 @@ App PWA/mobile-first para ensinar programação de forma gamificada, inspirado e
 - LocalStorage
 - Framer Motion
 - Lucide React
+- Font Awesome
 
 ## Instalação
 
