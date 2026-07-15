@@ -179,6 +179,130 @@ export const learningTracks = [
         hint: 'Use if nota >= 7 e retorne o texto aprovado.',
         explanation: 'O if em Python executa uma ação quando a condição é verdadeira.',
         successMessage: 'Você escreveu uma condição em Python para classificar um resultado.'
+      },
+      {
+        id: 'py-005',
+        type: 'fill_in_the_blank',
+        level: 'A1',
+        skill: 'output',
+        title: 'Mostre uma mensagem',
+        reward: 5,
+        question: 'Complete o código para mostrar Olá na tela.',
+        examples: ['print("Python") mostra Python'],
+        starterCode: '____("Olá")',
+        answer: 'print("Olá")',
+        hint: 'A função usada para exibir uma mensagem em Python é print.',
+        explanation: 'print() mostra textos e valores na saída do programa.',
+        successMessage: 'Você usou print() para mostrar uma mensagem. Essa é a forma mais simples de ver um resultado em Python.',
+        interaction: {
+          template: '____("Olá")',
+          blanks: [{ id: 'blank-1', acceptedAnswers: ['print'] }]
+        },
+        validation: {
+          strategy: 'normalized_text',
+          acceptedAnswers: ['print("Olá")', "print('Olá')"]
+        },
+        feedback: {
+          correct: 'A mensagem apareceu na tela.',
+          incorrect: 'Quase! Complete o espaço com a função que mostra uma mensagem.',
+          hint: 'Digite print no espaço em branco.',
+          explanation: 'print() envia um valor para a saída.'
+        },
+        scaffolding: {
+          prerequisiteIds: [],
+          concept: 'saída com print',
+          step: 1,
+          fadedSupport: false
+        },
+        metadata: {
+          estimatedSeconds: 30,
+          version: 1,
+          tags: ['python', 'sintaxe', 'print']
+        }
+      },
+      {
+        id: 'py-006',
+        type: 'fill_in_the_blank',
+        level: 'A1',
+        skill: 'variables',
+        title: 'Guarde uma idade',
+        reward: 5,
+        question: 'Complete a linha para guardar o número 18 na variável idade.',
+        examples: ['pontos = 10'],
+        starterCode: 'idade ____ 18',
+        answer: 'idade = 18',
+        hint: 'Use o sinal de igual para atribuir um valor.',
+        explanation: 'O operador = guarda o valor da direita na variável da esquerda.',
+        successMessage: 'Você guardou o número 18 na variável idade. Agora o programa pode reutilizar esse valor.',
+        interaction: {
+          template: 'idade ____ 18',
+          blanks: [{ id: 'blank-1', acceptedAnswers: ['='] }]
+        },
+        validation: {
+          strategy: 'normalized_text',
+          acceptedAnswers: ['idade = 18', 'idade=18']
+        },
+        feedback: {
+          correct: 'A variável recebeu o valor 18.',
+          incorrect: 'Revise o operador entre o nome da variável e o valor.',
+          hint: 'O operador de atribuição é =.',
+          explanation: 'A atribuição conecta um nome a um valor.'
+        },
+        scaffolding: {
+          prerequisiteIds: ['py-005'],
+          concept: 'atribuição de variável',
+          step: 2,
+          fadedSupport: false
+        },
+        metadata: {
+          estimatedSeconds: 30,
+          version: 1,
+          tags: ['python', 'sintaxe', 'variáveis']
+        }
+      },
+      {
+        id: 'py-007',
+        type: 'multiple_choice',
+        level: 'A1',
+        skill: 'booleans',
+        title: 'Verdadeiro em Python',
+        reward: 5,
+        question: 'Qual opção representa o valor verdadeiro em Python?',
+        examples: ['False representa falso'],
+        starterCode: '',
+        answer: 'True',
+        hint: 'Em Python, valores booleanos começam com letra maiúscula.',
+        explanation: 'Python usa True e False para representar valores lógicos.',
+        successMessage: 'Você reconheceu True, o valor booleano verdadeiro usado nas decisões em Python.',
+        interaction: {
+          options: [
+            { id: 'option-1', label: 'true' },
+            { id: 'option-2', label: 'True' },
+            { id: 'option-3', label: '"True"' }
+          ],
+          correctOptionId: 'option-2'
+        },
+        validation: {
+          strategy: 'exact_option',
+          acceptedAnswers: ['True']
+        },
+        feedback: {
+          correct: 'True é o booleano verdadeiro em Python.',
+          incorrect: 'Observe as maiúsculas e não use aspas.',
+          hint: 'A resposta começa com T maiúsculo.',
+          explanation: 'Sem aspas, True é um booleano; entre aspas, seria texto.'
+        },
+        scaffolding: {
+          prerequisiteIds: ['py-006'],
+          concept: 'valor booleano',
+          step: 3,
+          fadedSupport: true
+        },
+        metadata: {
+          estimatedSeconds: 20,
+          version: 1,
+          tags: ['python', 'sintaxe', 'booleanos']
+        }
       }
     ]
   },
@@ -248,6 +372,130 @@ export const learningTracks = [
         hint: 'Use SELECT COUNT(*) FROM usuarios;',
         explanation: 'COUNT conta registros retornados por uma consulta.',
         successMessage: 'Você usou COUNT para transformar linhas de uma tabela em uma métrica.'
+      },
+      {
+        id: 'sql-006',
+        type: 'fill_in_the_blank',
+        level: 'A1',
+        skill: 'select_columns',
+        title: 'Escolha uma coluna',
+        reward: 5,
+        question: 'Complete a consulta para buscar apenas a coluna nome da tabela usuarios.',
+        examples: ['SELECT preco FROM produtos;'],
+        starterCode: 'SELECT ____ FROM usuarios;',
+        answer: 'SELECT nome FROM usuarios;',
+        hint: 'Escreva o nome da coluna entre SELECT e FROM.',
+        explanation: 'SELECT pode buscar uma coluna específica sem retornar todos os campos.',
+        successMessage: 'Você selecionou apenas a coluna nome. Consultas específicas deixam o resultado mais claro.',
+        interaction: {
+          template: 'SELECT ____ FROM usuarios;',
+          blanks: [{ id: 'blank-1', acceptedAnswers: ['nome'] }]
+        },
+        validation: {
+          strategy: 'sql_normalized',
+          acceptedAnswers: ['SELECT nome FROM usuarios;', 'SELECT nome FROM usuarios']
+        },
+        feedback: {
+          correct: 'A consulta retorna somente a coluna nome.',
+          incorrect: 'Confira qual coluna deve aparecer entre SELECT e FROM.',
+          hint: 'A coluna pedida se chama nome.',
+          explanation: 'A lista após SELECT define quais colunas serão retornadas.'
+        },
+        scaffolding: {
+          prerequisiteIds: ['sql-001'],
+          concept: 'seleção de coluna',
+          step: 1,
+          fadedSupport: false
+        },
+        metadata: {
+          estimatedSeconds: 30,
+          version: 1,
+          tags: ['sql', 'sintaxe', 'select']
+        }
+      },
+      {
+        id: 'sql-007',
+        type: 'multiple_choice',
+        level: 'A1',
+        skill: 'from_clause',
+        title: 'Origem dos dados',
+        reward: 5,
+        question: 'Qual palavra indica de qual tabela os dados serão buscados?',
+        examples: ['SELECT * FROM produtos;'],
+        starterCode: '',
+        answer: 'FROM',
+        hint: 'Ela aparece logo antes do nome da tabela.',
+        explanation: 'FROM informa a tabela de origem de uma consulta.',
+        successMessage: 'Você identificou FROM, a cláusula que aponta de qual tabela os dados vêm.',
+        interaction: {
+          options: [
+            { id: 'option-1', label: 'TABLE' },
+            { id: 'option-2', label: 'FROM' },
+            { id: 'option-3', label: 'GET' }
+          ],
+          correctOptionId: 'option-2'
+        },
+        validation: {
+          strategy: 'exact_option',
+          acceptedAnswers: ['FROM']
+        },
+        feedback: {
+          correct: 'FROM aponta a tabela consultada.',
+          incorrect: 'Procure a palavra usada antes do nome da tabela.',
+          hint: 'A resposta tem quatro letras e começa com F.',
+          explanation: 'Uma consulta básica combina SELECT com FROM.'
+        },
+        scaffolding: {
+          prerequisiteIds: ['sql-006'],
+          concept: 'cláusula FROM',
+          step: 2,
+          fadedSupport: false
+        },
+        metadata: {
+          estimatedSeconds: 20,
+          version: 1,
+          tags: ['sql', 'sintaxe', 'from']
+        }
+      },
+      {
+        id: 'sql-008',
+        type: 'fill_in_the_blank',
+        level: 'A1',
+        skill: 'limit_results',
+        title: 'Limite de resultados',
+        reward: 5,
+        question: 'Complete a consulta para retornar no máximo 5 usuários.',
+        examples: ['SELECT * FROM produtos LIMIT 10;'],
+        starterCode: 'SELECT * FROM usuarios ____ 5;',
+        answer: 'SELECT * FROM usuarios LIMIT 5;',
+        hint: 'Use a palavra LIMIT antes do número máximo de linhas.',
+        explanation: 'LIMIT restringe a quantidade de linhas retornadas.',
+        successMessage: 'Você limitou a consulta a 5 linhas, evitando trazer mais dados do que precisa.',
+        interaction: {
+          template: 'SELECT * FROM usuarios ____ 5;',
+          blanks: [{ id: 'blank-1', acceptedAnswers: ['LIMIT'] }]
+        },
+        validation: {
+          strategy: 'sql_normalized',
+          acceptedAnswers: ['SELECT * FROM usuarios LIMIT 5;', 'SELECT * FROM usuarios LIMIT 5']
+        },
+        feedback: {
+          correct: 'A consulta agora retorna no máximo 5 linhas.',
+          incorrect: 'Falta a palavra que limita a quantidade de resultados.',
+          hint: 'Digite LIMIT antes do número 5.',
+          explanation: 'LIMIT é útil para testar e paginar consultas.'
+        },
+        scaffolding: {
+          prerequisiteIds: ['sql-007'],
+          concept: 'limitação de linhas',
+          step: 3,
+          fadedSupport: true
+        },
+        metadata: {
+          estimatedSeconds: 30,
+          version: 1,
+          tags: ['sql', 'sintaxe', 'limit']
+        }
       }
     ]
   },

@@ -33,7 +33,8 @@ export default function Challenge({ setScreen }) {
   }, [completedChallenges, trackChallenges])
 
   function testSolution() {
-    const ok = validateAnswer(answer, current.answer)
+    const acceptedAnswers = current.validation?.acceptedAnswers ?? [current.answer]
+    const ok = acceptedAnswers.some((expectedAnswer) => validateAnswer(answer, expectedAnswer))
     recordAttempt(ok)
     if (ok) {
       const reward = completeChallenge(current)
@@ -106,18 +107,38 @@ export default function Challenge({ setScreen }) {
             Pedir dica
           </button>
         </div>
-        <div className="overflow-hidden rounded-2xl bg-slate-950 shadow-inner">
-          <textarea
-            value={answer}
-            onChange={(event) => {
-              setAnswer(event.target.value)
-              setFeedback(null)
-            }}
-            spellCheck="false"
-            className="min-h-56 w-full resize-none bg-transparent p-4 font-mono text-sm leading-7 text-violet-100 outline-none placeholder:text-slate-500"
-            placeholder={current.starterCode}
-          />
-        </div>
+        {current.type === 'multiple_choice' ? (
+          <div className="grid gap-3" role="radiogroup" aria-label="Opções de resposta">
+            {current.interaction.options.map((option) => {
+              const selected = answer === option.label
+              return (
+                <button
+                  key={option.id}
+                  type="button"
+                  role="radio"
+                  aria-checked={selected}
+                  onClick={() => { setAnswer(option.label); setFeedback(null) }}
+                  className={`min-h-14 rounded-2xl border-2 px-4 py-3 text-left text-base font-bold transition ${selected ? 'border-violet-500 bg-violet-50 text-violet-700' : 'border-slate-100 bg-white text-slate-700'}`}
+                >
+                  {option.label}
+                </button>
+              )
+            })}
+          </div>
+        ) : (
+          <div className="overflow-hidden rounded-2xl bg-slate-950 shadow-inner">
+            <textarea
+              value={answer}
+              onChange={(event) => {
+                setAnswer(event.target.value)
+                setFeedback(null)
+              }}
+              spellCheck="false"
+              className="min-h-56 w-full resize-none bg-transparent p-4 font-mono text-sm leading-7 text-violet-100 outline-none placeholder:text-slate-500"
+              placeholder={current.starterCode}
+            />
+          </div>
+        )}
         <div className="mt-4 grid grid-cols-2 gap-3">
           <button
             type="button"
@@ -136,7 +157,7 @@ export default function Challenge({ setScreen }) {
         </div>
         {feedback === 'error' && (
           <p className="mt-4 rounded-2xl bg-rose-50 p-4 text-sm font-bold leading-6 text-rose-500">
-            Ainda não foi dessa. Compare sua resposta com a dica e tente de novo.
+            {current.feedback?.incorrect ?? 'Ainda não foi dessa. Compare sua resposta com a dica e tente de novo.'}
           </p>
         )}
       </section>

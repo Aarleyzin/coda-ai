@@ -10,7 +10,7 @@ App PWA/mobile-first para ensinar programação de forma gamificada, inspirado e
 - Navegação inferior com Início, Desafios, Progresso e Perfil.
 - Trilhas de aprendizado para Lógica de programação, JavaScript, Python, SQL, Git/GitHub, APIs e AWS Básico.
 - Tela de desafios por trilha, com progresso e seleção de lições.
-- Tela de desafio com pergunta, exemplos, editor simples, dica, limpeza de código e validação inicial.
+- Tela de desafio com pergunta, exemplos, editor simples, múltipla escolha, dica, limpeza de código e validação por respostas aceitas.
 - XP concedido apenas uma vez por desafio concluído.
 - Progresso salvo em `localStorage`, com migração simples para dados antigos.
 - Perfil com avatar/mascote, nome editável, nível, XP, sequência, trilha atual, conquistas e reset com confirmação.
@@ -164,6 +164,19 @@ Dentro da trilha desejada, adicione um item em `lessons`:
 
 Use ids únicos para não conflitar com o progresso salvo no navegador.
 
+## Arquitetura de desafios e gamificação
+
+O contrato evolutivo de conteúdo está em src/data/challenge.schema.json. Ele suporta code_input, fill_in_the_blank, multiple_choice e drag_and_drop_code, além de validação, feedback contextual, pré-requisitos, nível, habilidade e versão.
+
+A auditoria da experiência, o plano de Vidas/Ofensiva, a expansão de JavaScript para 20 microdesafios e o pipeline editorial estão em [docs/GAMIFICATION_AUDIT.md](docs/GAMIFICATION_AUDIT.md).
+
+Ao criar desafios novos:
+
+- mantenha um conceito por interação;
+- use ids inéditos para preservar o progresso salvo;
+- escreva feedback de erro acionável e uma mensagem de sucesso ligada ao conceito;
+- preencha scaffolding e metadata;
+- mantenha os campos legados enquanto a migração dos renderizadores estiver em andamento.
 ## Plano de atualizações mensais
 
 As novidades ficam em `src/data/monthlyContent.js`. Cada atualização deve ter:

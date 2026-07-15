@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://coda-ai.dev/schemas/challenge.schema.json",
+  "title": "Desafio coda-aí",
+  "type": "object",
+  "required": ["id", "trackId", "type", "level", "skill", "title", "question", "reward", "interaction", "validation", "feedback", "scaffolding", "metadata"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "trackId": { "type": "string" },
+    "type": { "enum": ["code_input", "fill_in_the_blank", "multiple_choice", "drag_and_drop_code"] },
+    "level": { "enum": ["A1", "A2", "B1", "B2", "C1"] },
+    "skill": { "type": "string" },
+    "title": { "type": "string", "minLength": 3 },
+    "question": { "type": "string", "minLength": 5 },
+    "reward": { "type": "integer", "minimum": 0 },
+    "examples": { "type": "array", "items": { "type": "string" } },
+    "starterCode": { "type": "string" },
+    "interaction": {
+      "type": "object",
+      "properties": {
+        "template": { "type": "string" },
+        "blanks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "acceptedAnswers"],
+            "properties": {
+              "id": { "type": "string" },
+              "acceptedAnswers": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+            }
+          }
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label"],
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" }
+            }
+          }
+        },
+        "correctOptionId": { "type": "string" },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "code"],
+            "properties": {
+              "id": { "type": "string" },
+              "code": { "type": "string" }
+            }
+          }
+        },
+        "correctOrder": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["strategy"],
+      "properties": {
+        "strategy": { "enum": ["normalized_text", "sql_normalized", "exact_option", "ordered_blocks", "test_cases"] },
+        "acceptedAnswers": { "type": "array", "items": { "type": "string" } },
+        "testCases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["input", "expected"],
+            "properties": { "input": {}, "expected": {} }
+          }
+        }
+      }
+    },
+    "feedback": {
+      "type": "object",
+      "required": ["correct", "incorrect", "hint", "explanation"],
+      "properties": {
+        "correct": { "type": "string" },
+        "incorrect": { "type": "string" },
+        "hint": { "type": "string" },
+        "explanation": { "type": "string" }
+      }
+    },
+    "scaffolding": {
+      "type": "object",
+      "required": ["prerequisiteIds", "concept", "step", "fadedSupport"],
+      "properties": {
+        "prerequisiteIds": { "type": "array", "items": { "type": "string" } },
+        "concept": { "type": "string" },
+        "step": { "type": "integer", "minimum": 1 },
+        "fadedSupport": { "type": "boolean" }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["estimatedSeconds", "version", "tags"],
+      "properties": {
+        "estimatedSeconds": { "type": "integer", "minimum": 10 },
+        "version": { "type": "integer", "minimum": 1 },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "type": { "const": "multiple_choice" } } },
+      "then": { "properties": { "interaction": { "required": ["options", "correctOptionId"] } } }
+    },
+    {
+      "if": { "properties": { "type": { "const": "fill_in_the_blank" } } },
+      "then": { "properties": { "interaction": { "required": ["template", "blanks"] } } }
+    },
+    {
+      "if": { "properties": { "type": { "const": "drag_and_drop_code" } } },
+      "then": { "properties": { "interaction": { "required": ["blocks", "correctOrder"] } } }
+    }
+  ],
+  "additionalProperties": true
+}
